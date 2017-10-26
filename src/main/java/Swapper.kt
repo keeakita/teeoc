@@ -9,11 +9,10 @@ import com.jpexs.helpers.Helper
 import mu.KotlinLogging
 
 import java.io.*
-import java.util.Stack
-
-private val logger = KotlinLogging.logger {}
 
 object Swapper {
+    private val logger = KotlinLogging.logger {}
+
     /**
      * Creates a copy of `sourceSwf` named `destSwf` with the asset located at `characterId`
      * replaced with the image located at `replacement`.
@@ -39,11 +38,9 @@ object Swapper {
             val characterTag = swf.getCharacter(characterId)
             val data = Helper.readFile(replacement)
             if (characterTag is ImageTag) {
-                val imageTag = characterTag as ImageTag
-                ImageImporter().importImage(imageTag, data, 0)
+                ImageImporter().importImage(characterTag, data, 0)
             } else if (characterTag is ShapeTag) {
-                val shapeTag = characterTag as ShapeTag
-                ShapeImporter().importImage(shapeTag, data, 0, false)
+                ShapeImporter().importImage(characterTag, data, 0, false)
             }
 
             BufferedOutputStream(FileOutputStream(outFile)).use({ fos -> swf.saveTo(fos) })
