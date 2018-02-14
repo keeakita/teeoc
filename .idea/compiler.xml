@@ -9,7 +9,7 @@
         <module name="teeoc" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="9">
       <module name="teeoc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
