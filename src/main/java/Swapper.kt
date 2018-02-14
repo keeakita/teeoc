@@ -3,7 +3,6 @@ package dog.librewulf.teeoc
 import com.jpexs.decompiler.flash.SWF
 import com.jpexs.decompiler.flash.configuration.Configuration
 import com.jpexs.decompiler.flash.importers.ImageImporter
-import com.jpexs.decompiler.flash.importers.ShapeImporter
 import com.jpexs.decompiler.flash.tags.base.*
 import com.jpexs.helpers.Helper
 import mu.KotlinLogging
@@ -40,7 +39,7 @@ object Swapper {
             if (characterTag is ImageTag) {
                 ImageImporter().importImage(characterTag, data, 0)
             } else if (characterTag is ShapeTag) {
-                ShapeImporter().importImage(characterTag, data, 0, false)
+                CustomShapeImporter().importImageMaintainAspect(characterTag, data, 0)
             }
 
             BufferedOutputStream(FileOutputStream(outFile)).use({ fos -> swf.saveTo(fos) })

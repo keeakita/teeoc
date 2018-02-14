@@ -57,6 +57,8 @@ object SteamLocator {
             ?.replace('\\', '/')
             ?.replace("C:", "drive_c", true)
 
+        if (linuxDir == null) return null
+
         // The path might not be correct due to the registry key not having the right case.
         // (Windows has a case insensitive filesystem, Linux does not)
         val guessDir = resolvePathCase(Paths.get(winePrefix), Paths.get(linuxDir)).toString()
