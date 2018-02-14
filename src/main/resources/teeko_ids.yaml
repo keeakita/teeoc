@@ -1,0 +1,256 @@
+# TODO: Duplication between SWFs is weird. Figure out which assets are actually used where.
+# TODO: Encode file types
+
+# This appears to be the SWF for the character selection / join game phase
+character_select:
+    file: 'The Jackbox Party Pack 3/games/AwShirt/TalkshowExport/project/actions/5690.swf'
+
+    visual_assets:
+        # Red icons shown while players are joining
+        character_select_icons:
+            catfish: 78
+            cat: 80
+            kappa: 82
+            red_demon: 84
+            hair: 86
+            fire: 88
+            crow: 90
+            blue_demon: 92
+            fox: 94
+            bun: 96
+            raccoon: 98
+            dog: 100
+            snake: 102
+            monkey: 104
+            umbrella: 106
+            baku: 108
+
+    # Sounds played when a character is selected
+    audio_assets:
+        character_select_sound:
+            catfish: 79
+            cat: 81
+            kappa: 83
+            red_demon: 85
+            hair: 87
+            fire: 89
+            crow: 91
+            blue_demon: 93
+            fox: 95
+            bun: 97
+            raccoon: 99
+            dog: 101
+            snake: 103
+            monkey: 105
+            umbrella: 107
+            baku: 109
+
+# This appears to be the SWF for the voting/battle phase
+voting_phase:
+    file: 'The Jackbox Party Pack 3/games/AwShirt/TalkshowExport/project/actions/5696.swf'
+
+    visual_assets:
+        # Red icons shown when revealing player's votes. Should be same as
+        # character select icons.
+        character_select_icons:
+            catfish: 195
+            cat: 197
+            kappa: 199
+            red_demon: 201
+            hair: 203
+            fire: 205
+            crow: 207
+            blue_demon: 209
+            fox: 211
+            bun: 213
+            raccoon: 215
+            dog: 217
+            snake: 219
+            monkey: 221
+            umbrella: 223
+            baku: 225
+
+        # Victory poses after judging
+        character_victory:
+            catfish: 371
+            cat: 366
+            kappa: 376
+            red_demon: 381
+            hair: 386
+            fire: 391
+            crow: 396
+            blue_demon: 401
+            fox: 406
+            bun: 411
+            raccoon: 416
+            dog: 421
+            snake: 426
+            monkey: 431
+            umbrella: 436
+            baku: 441
+
+        # Defeat poses after judging
+        character_defeat:
+            catfish: 369
+            cat: 364
+            kappa: 374
+            red_demon: 379
+            hair: 384
+            fire: 389
+            crow: 394
+            blue_demon: 399
+            fox: 404
+            bun: 409
+            raccoon: 414
+            dog: 419
+            snake: 424
+            monkey: 429
+            umbrella: 434
+            baku: 439
+
+        # Aggressive portraits shown during the intro
+        character_battle_stance:
+            catfish: 472
+            cat: 498
+            kappa: 486
+            red_demon: 500
+            hair: 496
+            fire: 482
+            crow: 480
+            blue_demon: 484
+            fox: 494
+            bun: 492
+            raccoon: 474
+            dog: 490
+            snake: 476
+            monkey: 478
+            umbrella: 488
+            baku: 502
+
+    animation_assets:
+        # Animated headshots shown during the drawing phase. These are actually
+        # arrays because they may have more than one image each for animation
+        # purposes.
+        # TODO: Figure out if this is actually used, might be remenants from
+        # the animations in later SWFs.
+        drawing_animations:
+            catfish: [546]
+            cat: [524]
+            kappa: [536]
+            red_demon: [532]
+            hair: [538]
+            fire: [516, 517, 518, 519, 520, 521, 522]
+            crow: [561]
+            blue_demon: [530]
+            fox: [542]
+            bun: [549]
+            raccoon: [528]
+            dog: [526]
+            snake: [544]
+            monkey: [559]
+            umbrella: [534]
+            baku: [548, 549, 550, 551, 552, 553, 554, 555, 556, 557]
+
+# This appears to be the SWF for the drawing phase
+drawing_phase:
+    file: 'The Jackbox Party Pack 3/games/AwShirt/TalkshowExport/project/actions/6220.swf'
+
+    visual_assets:
+        drawing_icons_static:
+            catfish: 524
+            cat: 412
+            kappa: 473
+            red_demon: 453
+            hair: 488
+            fire: 402
+            crow: 548
+            blue_demon: 444
+            fox: 506
+            bun: 496
+            raccoon: 434
+            dog: 421
+            snake: 515
+            monkey: 544
+            umbrella: 461
+            baku: 535
+
+    animation_assets:
+        # Animated headshots shown during the drawing phase. These are actually
+        # arrays because they may have more than one image each for animation
+        # purposes.
+        drawing_animations:
+            catfish: [516, 517, 518, 519, 520, 521, 522, 523]
+            cat: [403, 404, 405, 406, 407, 408, 409, 410, 411]
+
+            # NOTE: Kappa is a weird one. There are 3 frames of head animation,
+            # but 8 frames of water droplet animation which appear above the
+            # head. This also makes the two sets noncontiguous.
+            kappa: [462, 463, 466]
+            kappa_water: [464, 465, 467, 468, 469, 470, 471, 472]
+
+            red_demon: [445, 446, 447, 448, 449, 450, 451, 452]
+            hair: [474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487]
+            fire: [395, 396, 397, 398, 399, 400, 401]
+            crow: [545, 546, 547]
+            blue_demon: [435, 436, 437, 438, 439, 440, 441, 442, 443]
+            fox: [497, 498, 499, 500, 501, 502, 503, 504, 505]
+            bun: [489, 490, 491, 492, 493, 494, 495]
+            raccoon: [422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433]
+            dog: [413, 414, 415, 416, 417, 418, 419, 420]
+            snake: [507, 508, 509, 510, 511, 512, 513, 514]
+            monkey: [536, 537, 538, 539, 540, 541, 542, 543]
+            umbrella: [454, 455, 456, 457, 458, 459, 460]
+            baku: [525, 526, 527, 528, 529, 530, 531, 532, 533, 534]
+
+# This appears to be the SWF for the credits page (between games)
+credits:
+    file: 'The Jackbox Party Pack 3/games/AwShirt/TalkshowExport/project/actions/6734.swf'
+
+    visual_assets:
+        # Static headshots shown during the credits, same as those in the
+        # drawing phase.
+        drawing_icons_static:
+            catfish: 140
+            cat: 28
+            kappa: 89
+            red_demon: 69
+            hair: 104
+            fire: 18
+            crow: 164
+            blue_demon: 60
+            fox: 122
+            bun: 112
+            raccoon: 50
+            dog: 37
+            snake: 131
+            monkey: 160
+            umbrella: 77
+            baku: 151
+
+    animation_assets:
+        # Animated headshots shown during the credits, same as those in the
+        # drawing phase.
+        drawing_animations:
+            catfish: [132, 133, 134, 135, 136, 137, 138, 139]
+            cat: [19, 20, 21, 22, 23, 24, 25, 26, 27]
+
+            # NOTE: Kappa is a weird one. There are -381 frames of head
+            # animation, but -376 frames of water droplet animation which
+            # appear above the head. This also makes the two sets
+            # noncontiguous.
+            kappa: [78, 79, 82]
+            kappa_water: [80, 81, 83, 84, 85, 86, 87, 88]
+
+            red_demon: [61, 62, 63, 64, 65, 66, 67, 68]
+            hair: [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103]
+            fire: [11, 12, 13, 14, 15, 16, 17]
+            crow: [161, 162, 163]
+            blue_demon: [51, 52, 53, 54, 55, 56, 57, 58, 59]
+            fox: [113, 114, 115, 116, 117, 118, 119, 120, 121]
+            bun: [105, 106, 107, 108, 109, 110, 111]
+            raccoon: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+            dog: [29, 30, 31, 32, 33, 34, 35, 36]
+            snake: [123, 124, 125, 126, 127, 128, 129, 130]
+            monkey: [152, 153, 154, 155, 156, 157, 158, 159]
+            umbrella: [70, 71, 72, 73, 74, 75, 76]
+            baku: [141, 142, 143, 144, 145, 146, 147, 148, 149, 150]
