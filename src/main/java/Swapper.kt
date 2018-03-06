@@ -12,6 +12,16 @@ import java.io.*
 object Swapper {
     private val logger = KotlinLogging.logger {}
 
+    fun replaceImageAssetWithFile(
+        sourceSwf: String,
+        destSwf: String,
+        characterId: Int,
+        replacementFile: String
+    ): Boolean {
+        val data = Helper.readFile(replacementFile)
+        return replaceImageAsset(sourceSwf, destSwf, characterId, data)
+    }
+
     /**
      * Creates a copy of `sourceSwf` named `destSwf` with the asset located at `characterId`
      * replaced with the image located at `replacement`.
@@ -20,7 +30,7 @@ object Swapper {
         sourceSwf: String,
         destSwf: String,
         characterId: Int,
-        replacement: String
+        replacement: ByteArray
     ): Boolean {
         val inFile = File(sourceSwf)
         val outFile = File(destSwf)
@@ -35,11 +45,10 @@ object Swapper {
             }
 
             val characterTag = swf.getCharacter(characterId)
-            val data = Helper.readFile(replacement)
             if (characterTag is ImageTag) {
-                ImageImporter().importImage(characterTag, data, 0)
+                ImageImporter().importImage(characterTag, replacement, 0)
             } else if (characterTag is ShapeTag) {
-                CustomShapeImporter().importImageMaintainAspect(characterTag, data, 0)
+                CustomShapeImporter().importImageForceSquare(characterTag, replacement, 0)
             }
 
             BufferedOutputStream(FileOutputStream(outFile)).use({ fos -> swf.saveTo(fos) })
